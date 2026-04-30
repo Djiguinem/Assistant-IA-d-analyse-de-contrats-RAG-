@@ -21,3 +21,22 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+
+# Environnement virtuel
+venv/
+.env/
+
+# Python
+__pycache__/
+*.pyc
+
+# Fichiers temporaires
+*.log
+*.tmp
+
+# Données générées
+extracted_clauses.json
+current_contract.txt
+
+# OS
+.DS_Store
