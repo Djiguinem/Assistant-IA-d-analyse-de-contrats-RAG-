@@ -65,3 +65,23 @@ Interface développée avec Gradio permettant :
 l’upload de contrats PDF
 la visualisation des clauses extraites
 une interaction sous forme de chat
+
+### Technologies utilisées:
+- Python
+- LangChain (orchestration du pipeline RAG)
+- Ollama + Gemma3 (LLM local)
+- ChromaDB (base vectorielle)
+- PyPDF2 (lecture PDF)
+- Gradio (interface utilisateur)
+## ⚙️ Installation rapide
+
+```bash
+git clone https://github.com/...
+cd project
+
+python -m venv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+ollama pull gemma3
