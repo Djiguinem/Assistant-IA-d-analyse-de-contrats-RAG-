@@ -38,12 +38,13 @@ Le pipeline se décompose en 3 grandes étapes :
 **Sortie :** Fichier JSON structuré  
 
 Exemple :
-```json
+json
 {
   "responsabilite": "...",
   "resiliation": "...",
   "audit": "..."
 }
+
 ### 2️⃣ RAG – Recherche augmentée
 - Indexation (offline)
   Découpage du texte (chunking)
