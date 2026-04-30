@@ -1,0 +1,7 @@
+{
+    "data_hosting": "All data processed pursuant to this Agreement shall be hosted exclusively on cloud infrastructure located within the United States of America. The Service Provider does not guarantee data residency within the European Union.",
+    "liability": "The AI system may generate outputs without deterministic guarantees.",
+    "subcontracting": null,
+    "audit_rights": "No contractual right to audit the internal logic, source code, training data, or reasoning mechanisms of the AI system is granted. The Service Provider may provide limited descriptive documentation but is not obligated to disclose full reasoning traces or inference logs.",
+    "legal_compliance": "The AI system may process documents originating from multiple jurisdictions, including the European Union, the United States, Canada, and Morocco. The Client acknowledges potential exposure to foreign governmental access requests under applicable U.S. legislation."
+}

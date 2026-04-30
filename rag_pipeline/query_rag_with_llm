@@ -1,0 +1,38 @@
+from langchain_ollama import ChatOllama
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_chroma import Chroma
+from langchain.chains import RetrievalQA
+
+# Recharger la base vectorielle
+embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+vectorstore = Chroma(persist_directory="rag_db", embedding_function=embeddings)
+retriever = vectorstore.as_retriever(search_kwargs={"k": 4})
+
+# LLM Ollama
+llm = ChatOllama(model="gemma3:latest", temperature=0)
+
+# Chaîne RAG
+qa = RetrievalQA.from_chain_type(
+    llm=llm,
+    retriever=retriever,
+    return_source_documents=True
+)
+
+# Boucle interactive
+while True:
+    query = input("\nPose ta question (ou 'exit'): ")
+    if query.lower() == "exit":
+        break
+
+    result = qa.invoke({"query": query})
+    print("\nRéponse générée :\n")
+    print(result["result"])
+
+    print("\nSources :")
+    seen_sources = set()
+    for doc in result["source_documents"]:
+        source = doc.metadata.get("source", "PDF inconnu")
+        if source not in seen_sources:
+            print("-", source)
+            seen_sources.add(source)
+            
